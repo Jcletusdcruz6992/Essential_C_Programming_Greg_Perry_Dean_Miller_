@@ -1,18 +1,18 @@
 #include<stdio.h>
 
 
-struct fraction{
+typedef struct fraction{
 int numerator;
 int denominator;
-};
+}Frac;
 
-void foo(const struct fraction* frac);    // function prototype
-void foo(const struct fraction* frac){
+void foo(const Frac* frac);    // function prototype
+void foo(const Frac* frac){
 printf("Fraction=%d/%d \n",frac->numerator,frac->denominator);
 //frac->numerator=5;        // This will give you error means fraction is a constant
 }
 int main(){
-struct fraction my_fraction={12,17};
+Frac my_fraction={12,17};
 foo(&my_fraction);
 return 0;
 }
